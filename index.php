@@ -83,18 +83,15 @@ if(!empty($youtubeURL) && !filter_var($youtubeURL, FILTER_VALIDATE_URL) === fals
 					}
 				}
 			}
-            //Header for force download
-            header("Cache-Control: public");
-			header("Content-Type: video/mp4");
-			header("Accept-Ranges: bytes");
-			//header('Content-Length:'.($end-$begin));
-			header("Content-Disposition: inline; filename=$fileName");
-			//header("Content-Range: bytes $begin-$end/$size");
-			header("Content-Transfer-Encoding: binary");
-			header("Connection: close");
-			
-			// Read the file 
-			readfile($downloadURL);
+            //Header for force download 
+            header("Cache-Control: public"); 
+            header("Content-Description: File Transfer"); 
+            header("Content-Disposition: attachment; filename=$fileName"); 
+            
+            header("Content-Transfer-Encoding: binary"); 
+             
+            // Read the file 
+            readfile($downloadURL); 
 		} 
 		
 	}else{ 
