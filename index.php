@@ -1,10 +1,11 @@
-<?php 
+<?php
 
-if(isset($_POST['submitURL'])){
 
 // Load download class 
 include_once 'functions.php'; 
 $handler = new Download(); 
+
+if(isset($_POST['submitURL'])){
  
 // video url of youtube
 $youtubeURL = $_POST['youtubeURL']; 
@@ -48,10 +49,6 @@ if(!empty($youtubeURL) && !filter_var($youtubeURL, FILTER_VALIDATE_URL) === fals
         $msgClass = 'error'; 
 }
 } else if(isset($_GET['v'])){
-
-// Load download class 
-include_once 'functions.php'; 
-$handler = new Download(); 
  
 // video url of youtube
 if (substr( $_GET['v'], 0, 5 ) === "https") {
