@@ -10,7 +10,8 @@ if(isset($_POST['submitURL'])){
 	$youtubeURL = $_POST['youtubeURL'];
 	
 	// if URL valid 
-	if(!empty($youtubeURL) && !filter_var($youtubeURL, FILTER_VALIDATE_URL) === false && ((substr( $youtubeURL, 0, 23 ) === "https://www.youtube.com") || (substr( $youtubeURL, 0, 19 ) === "https://youtube.com"))){
+	//if(!empty($youtubeURL) && !filter_var($youtubeURL, FILTER_VALIDATE_URL) === false && ((substr( $youtubeURL, 0, 23 ) === "https://www.youtube.com") || (substr( $youtubeURL, 0, 19 ) === "https://youtube.com"))){
+	if(!empty($youtubeURL) && !filter_var($youtubeURL, FILTER_VALIDATE_URL) === false){
 		
 		$downloader = $handler->getDownloader($youtubeURL); 
 		
